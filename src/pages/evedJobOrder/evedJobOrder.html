@@ -1,0 +1,106 @@
+<style type="text/css">
+  span{
+    color:red;
+  }
+</style>
+<ion-header>
+  <ion-navbar>
+    <ion-title style="float:left;margin-top: 10px;">Transaction - New Job Order</ion-title>
+    <button style="float:right;" ion-button color="dark" clear (click)="modalClose()">
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+            <ion-row>
+                <ion-col width-100>
+                    
+                    <ion-item>
+                        <ion-label floating>Description<span>*</span></ion-label>
+                        <ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col width-100>
+                        <ion-label>Total cost: PhP<span>*</span></ion-label> 
+                </ion-col>
+            </ion-row>
+
+
+
+
+
+            <ion-card-content>
+		
+        		<h3> <ion-icon ios="ios-filing" md="md-filing"></ion-icon> Items </h3>
+ 			</ion-card-content>	
+            <ion-row>
+                <ion-col width-100>
+                    <ion-item>
+                    	<ion-label floating>Select Items<span>*</span></ion-label>
+                    	<ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
+                    </ion-item>
+
+                </ion-col>
+              </ion-row>
+
+               <ion-row>
+                <ion-col width-100>                   
+                    	<ion-label>Search<span>*</span></ion-label>                               
+                </ion-col>
+              </ion-row>
+              			<ion-searchbar (ionInput)="getItems($event)">Search</ion-searchbar>
+
+                <ion-row>
+                
+                         <ion-grid text-center>
+                                <ion-row wrap responsive>
+                                     <ion-col style = "border: 1px solid;" width-25>Quantity</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Items</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Unit Price</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Total Cost</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Action</ion-col>     
+                                </ion-row>
+                         </ion-grid>
+                </ion-row> 
+
+                <br>
+                <br>
+
+            <ion-card-content>
+		
+       			 <h3> <ion-icon ios="ios-paper" md="md-paper"></ion-icon> Services </h3>
+ 			</ion-card-content>
+
+ 			<ion-row>
+                <ion-col width-100>
+                    <ion-item>
+                    	<ion-label floating>Select Services<span>*</span></ion-label>
+                    	<ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
+                    </ion-item>
+
+                </ion-col>
+              </ion-row>
+
+              <ion-searchbar (ionInput)="getItems($event)">Search</ion-searchbar>
+
+            <ion-row>
+                
+                         <ion-grid text-center>
+                                <ion-row wrap responsive>
+                                     <ion-col style = "border: 1px solid;" width-25>Services</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Price</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Action</ion-col>   
+                                </ion-row>
+                         </ion-grid>
+                </ion-row>
+
+                                                                                  
+
+    	<button style="float:right;" ion-button color="dark" (click) ="goEvedPayment()">Proceed to Payment -></button>
+        <button style="float:right;" ion-button >Save</button>
+</ion-content>

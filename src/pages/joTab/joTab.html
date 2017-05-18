@@ -1,0 +1,229 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+     <ion-title style="float:left;margin-top: 10px;">Transaction - Job Order</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <ion-segment [(ngModel)]="info">
+        <ion-segment-button value="customer">
+            Customer Information
+        </ion-segment-button>
+        <ion-segment-button value="vehicle">
+            Vehicle Information
+        </ion-segment-button>
+        <ion-segment-button value="inspection">
+            Job Order Details
+        </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="info">
+        <ion-list *ngSwitchCase="'customer'">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>First Name<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.first" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>Middle Name</ion-label>
+                            <ion-input type="text" [(ngModel)]="data.middle" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>Last Name<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.last" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-item>
+                        <ion-label floating>Address<span>*</span></ion-label>
+                        <ion-textarea></ion-textarea>
+                    </ion-item>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-50>
+                        <ion-item>
+                            <ion-label floating>Contact<span>*</span></ion-label>
+                            <ion-input type="number" [(ngModel)]="data.contact" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-50>
+                        <ion-item>
+                            <ion-label floating>Email</ion-label>
+                            <ion-input type="email" [(ngModel)]="data.email" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+        <ion-list *ngSwitchCase="'vehicle'">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        
+                        <ion-item>
+                            <ion-label floating>Vehicle Plate<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.plate" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        
+                        <ion-item>
+                            <ion-label floating>Vehicle Make<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.make" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        
+                        <ion-item>
+                            <ion-label floating>Vehicle Model<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.model" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-33>
+                        
+                        <ion-item>
+                            <ion-label floating>Vehicle Year<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.year" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        
+                        <ion-item>
+                            <ion-label floating>Vehicle Type<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.type" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        
+                        <ion-item>
+                            <ion-label floating>Vehicle Engine<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.engine" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col width-33>
+                       
+                    </ion-col>
+                    <ion-col width-33>
+                        
+                        <ion-item>
+                            <ion-label floating>Vehicle Mileage</ion-label>
+                            <ion-input type="text" [(ngModel)]="data.mileage" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+        <ion-list *ngSwitchCase="'inspection'">
+            <ion-row>
+                <ion-col width-100>
+                    
+                    <ion-item>
+                        <ion-label floating>Description<span>*</span></ion-label>
+                        <ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col width-100>
+                    
+                    
+                        <ion-label>Total cost: PhP<span>*</span></ion-label> 
+                </ion-col>
+            </ion-row>
+
+            <ion-card-content>
+    
+            <h3> <ion-icon ios="ios-filing" md="md-filing"></ion-icon> Items </h3>
+      </ion-card-content> 
+            <ion-row>
+                <ion-col width-100>
+                    <ion-item>
+                      <ion-label floating>Select Items<span>*</span></ion-label>
+                      <ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
+                    </ion-item>
+
+                </ion-col>
+              </ion-row>
+
+               <ion-row>
+                <ion-col width-100>                   
+                      <ion-label>Search<span>*</span></ion-label>                               
+                </ion-col>
+              </ion-row>
+                    <ion-searchbar (ionInput)="getItems($event)">Search</ion-searchbar>
+
+            <ion-row>
+                
+                         <ion-grid text-center>
+                                <ion-row wrap responsive>
+                                     <ion-col style = "border: 1px solid;" width-25>Quantity</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Items</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Unit Price</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Total Cost</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Action</ion-col>     
+                                </ion-row>
+                         </ion-grid>
+                </ion-row> 
+
+                <br>
+                <br>
+
+
+
+
+
+
+
+            <ion-card-content>
+    
+             <h3> <ion-icon ios="ios-paper" md="md-paper"></ion-icon> Services </h3>
+      </ion-card-content>
+
+      <ion-row>
+                <ion-col width-100>
+                    <ion-item>
+                      <ion-label floating>Select Services<span>*</span></ion-label>
+                      <ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
+                    </ion-item>
+
+                </ion-col>
+              </ion-row>
+
+             <ion-searchbar (ionInput)="getItems($event)">Search</ion-searchbar>
+
+            <ion-row>
+                
+                         <ion-grid text-center>
+                                <ion-row wrap responsive>
+                                     <ion-col style = "border: 1px solid;" width-25>Services</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Price</ion-col>
+                                     <ion-col style = "border: 1px solid;" width-25>Action</ion-col>   
+                                </ion-row>
+                         </ion-grid>
+                </ion-row>
+
+                                                                                  
+      </ion-list>
+    </div>
+
+      <button style="float:right;" ion-button color="dark" (click) ="gojoPayment()">Proceed to Payment -></button>
+        <button style="float:right;" ion-button >Save</button>
+       
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+     <ion-title style="float:left;margin-top: 10px;">Transaction - Estimate Cost</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<br> 
+
+<ion-row>
+ <button style="margin-left: 30px;" ion-button (click) ="goEvTab()">+ New Estimation</button>
+ </ion-row>
+ <br><br>
+
+ <ion-row>
+	<ion-col width-20>
+
+		 	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+	 </ion-col>
+ </ion-row>
+
+ <ion-row>
+                <ion-col width-100>                                   
+
+                </ion-col>
+
+                    <ion-grid text-center>
+                <ion-row wrap responsive>
+                   <ion-col style = "border: 1px solid;" width-25>Estimate No.</ion-col>
+                   <ion-col style = "border: 1px solid;" width-25>Vehicle</ion-col>
+                   <ion-col style = "border: 1px solid;" width-25>Customer</ion-col>
+                     <ion-col style = "border: 1px solid;" width-25>Actions</ion-col>
+                   
+                            
+                </ion-row>
+             </ion-grid>
+  </ion-row>
+
+</ion-content>
