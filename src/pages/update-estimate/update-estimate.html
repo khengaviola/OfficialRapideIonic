@@ -1,0 +1,63 @@
+<!--
+  Generated template for the UpdateEstimatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle (click)="Modal()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+     <ion-title style="float:left;margin-top: 10px;">Update - Estimate Cost</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	 <ion-segment [(ngModel)]="info">
+        <ion-segment-button value="user">
+            User Information
+        </ion-segment-button>
+        <ion-segment-button value="customer">
+            Customer Information
+        </ion-segment-button>
+        <ion-segment-button value="vehicle">
+            Vehicle Information
+        </ion-segment-button>
+        <ion-segment-button value="inspection">
+            Estimation Details
+        </ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="info">
+        <ion-list *ngSwitchCase="'user'">
+            <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>Username<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.username" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>Password</ion-label>
+                            <ion-input type="text" [(ngModel)]="data.password" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>Age<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.age" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-list>
+       </div>
+
+    	<button style="float:right;" ion-button color="dark" (click) ="goEvedJobOrder()">Proceed to Job Order -></button>
+        <button style="float:right;" ion-button (click) ="submit()">Save</button>
+</ion-content>

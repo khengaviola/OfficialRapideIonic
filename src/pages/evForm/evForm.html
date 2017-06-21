@@ -15,29 +15,37 @@
  </ion-row>
  <br><br>
 
- <ion-row>
-	<ion-col width-20>
 
-		 	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <table datatable class="row-border hover">
+  <thead>
+    <tr>
+      <th>Vehicle</th>
+      <th>Customer</th>
+      <th>Action</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr *ngFor="let user of data">
 
-	 </ion-col>
- </ion-row>
+       <td> 
+          <li>Plate: {{user.plate}} </li>
+          <li>Model: {{user.Model}} </li>
+          <li>Mileage: {{user.mileage}} </li>
+       </td>
 
- <ion-row>
-                <ion-col width-100>                                   
+       <td>
+          <li>Name: {{user.Name}} </li>
+          <li>Address: {{user.Address}} </li>
+          <li>Contact No: {{user.contact}} </li>
+          <li>Email: {{user.email}} </li>
+       </td>
 
-                </ion-col>
+      <th> <button ion-button small outline (click)="update(userId)">
+        <ion-icon name="construct"></ion-icon></button> 
+      </th>
 
-                    <ion-grid text-center>
-                <ion-row wrap responsive>
-                   <ion-col style = "border: 1px solid;" width-25>Estimate No.</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Vehicle</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Customer</ion-col>
-                     <ion-col style = "border: 1px solid;" width-25>Actions</ion-col>
-                   
-                            
-                </ion-row>
-             </ion-grid>
-  </ion-row>
+    </tr>
+   </tbody>
+   </table>
 
 </ion-content>

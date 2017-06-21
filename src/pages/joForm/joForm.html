@@ -15,29 +15,41 @@
  </ion-row>
  <br><br>
 
- <ion-row>
-	<ion-col width-20>
+<table datatable class="row-border hover">
+  <thead>
+    <tr>
+      <th>Job Id.</th>
+      <th>Start</th>
+      <th>Vehicle</th>
+      <th>Customer</th>
+      <th>Technician/s</th>
+   </thead>
+   <tbody>
+    <tr *ngFor="let job of data">
 
-		 	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+       <td> 
+          {{job.id}}
+       </td>
 
-	 </ion-col>
- </ion-row>
+       <td>
+          {{job.start}}
+       </td>
 
- <ion-row>
-                <ion-col width-100>                                   
+        <td>
+            <li>{{job.plate}}</li>
+            <li>{{job.Model}}</li>
+            <li>{{job.mileage}}</li>
+       </td>
 
-                </ion-col>
+        <td>
+          {{job.customer}}
+       </td>
 
-                    <ion-grid text-center>
-                <ion-row wrap responsive>
-                   <ion-col style = "border: 1px solid;" width-25>Estimate No.</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Vehicle</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Customer</ion-col>
-                     <ion-col style = "border: 1px solid;" width-25>Actions</ion-col>
-                   
-                            
-                </ion-row>
-             </ion-grid>
-  </ion-row>
+        <td>
+          {{job.technician}}
+       </td>
+    </tr>
+   </tbody>
+   </table>
 
 </ion-content>

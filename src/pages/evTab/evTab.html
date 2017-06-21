@@ -32,7 +32,7 @@
                     <ion-col width-33>
                         <ion-item>
                             <ion-label floating>First Name<span>*</span></ion-label>
-                            <ion-input type="text" [(ngModel)]="data.first" value=""></ion-input>
+                            <ion-input class="completeMe" id="firstName" type="text" [(ngModel)]="data.first" value=""></ion-input>
                         </ion-item>
                     </ion-col>
                     <ion-col width-33>
@@ -47,12 +47,26 @@
                             <ion-input type="text" [(ngModel)]="data.last" value=""></ion-input>
                         </ion-item>
                     </ion-col>
+                      <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>No. & St./Bldg.<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.st" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-item>
-                        <ion-label floating>Address<span>*</span></ion-label>
-                        <ion-textarea></ion-textarea>
-                    </ion-item>
+                    <ion-col width-50>
+                        <ion-item>
+                            <ion-label floating>Brgy./Subd.<span>*</span></ion-label>
+                            <ion-input type="number" [(ngModel)]="data.brgy" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-50>
+                        <ion-item>
+                            <ion-label floating>City/Municipality<span>*</span></ion-label>
+                            <ion-input type="number" [(ngModel)]="data.city" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
                 </ion-row>
                 <ion-row>
                     <ion-col width-50>
@@ -94,6 +108,7 @@
                             <ion-input type="text" [(ngModel)]="data.model" value=""></ion-input>
                         </ion-item>
                     </ion-col>
+
                 </ion-row>
                 <ion-row>
                     <ion-col width-33>
@@ -135,12 +150,75 @@
             </ion-grid>
         </ion-list>
         <ion-list *ngSwitchCase="'inspection'">
+
+             <ion-row>
+                    <ion-item>
+                        <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Assign Technician/s
+                        </ion-label>
+                            <ion-select multiple="true" [(ngModel)]="data.tech">
+                                <ion-option *ngFor="let tech of tech">{{tech.Name}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+            </ion-row> 	
+
+               <ion-row>
+                    <ion-item>
+                        <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Discount
+                        </ion-label>
+                            <ion-select multiple="true" [(ngModel)]="data.discount">
+                                <ion-option *ngFor="let disc of disc">{{disc.name}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+               </ion-row> 
+
+
+               <ion-row>
+                    <ion-item>
+                        <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Promo
+                        </ion-label>
+                            <ion-select multiple="true" [(ngModel)]="data.promo">
+                                <ion-option *ngFor="let prom of prom">{{prom.name}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+               </ion-row> 
+
+               <ion-row>
+                    <ion-item>
+                        <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Package
+                        </ion-label>
+                            <ion-select multiple="true" [(ngModel)]="data.packages">
+                                <ion-option *ngFor="let pack of pack">{{pack.name}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+               </ion-row> 
+
+
+               <ion-row>
+                    <ion-item>
+                        <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Product
+                        </ion-label>
+                            <ion-select multiple="true"  [(ngModel)]="data.product">
+                                <ion-option *ngFor="let prod of prod">{{prod.product}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+               </ion-row>
+           <!--    			<ion-searchbar (ionInput)="getItems($event)">Search</ion-searchbar> -->
+
+ 			<ion-row>
+                <ion-item>
+                <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Services</ion-label>
+                    <ion-select [(ngModel)]="data.services">
+                          <ion-option *ngFor="let user of data" >{{user.name}}</ion-option>
+                    </ion-select>
+                </ion-item>
+              </ion-row>
+
             <ion-row>
                 <ion-col width-100>
                     
                     <ion-item>
                         <ion-label floating>Description<span>*</span></ion-label>
-                        <ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
+                        <ion-input type="text" [(ngModel)]="data.desc" value=""></ion-input>
                     </ion-item>
                 </ion-col>
             </ion-row>
@@ -154,51 +232,13 @@
             </ion-row>
 
             <ion-card-content>
-		
-        		<h3> <ion-icon ios="ios-filing" md="md-filing"></ion-icon> Items </h3>
- 			</ion-card-content>	
-            <ion-row>
-                <ion-col width-100>
-                    <ion-item>
-                    	<ion-label floating>Select Items<span>*</span></ion-label>
-                    	<ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
-                    </ion-item>
-
-                </ion-col>
-              </ion-row>
-
-               <ion-row>
-                <ion-col width-100>                   
-                    	<ion-label>Search<span>*</span></ion-label>                               
-                </ion-col>
-              </ion-row>
-              			<ion-searchbar (ionInput)="getItems($event)">Search</ion-searchbar>
-
-
-
-
-
-
-
-            <ion-card-content>
-		
-       			 <h3> <ion-icon ios="ios-paper" md="md-paper"></ion-icon> Services </h3>
- 			</ion-card-content>
-
- 			<ion-row>
-                <ion-col width-100>
-                    <ion-item>
-                    	<ion-label floating>Select Services<span>*</span></ion-label>
-                    	<ion-input type="text" [(ngModel)]="data.tech" value=""></ion-input>
-                    </ion-item>
-
-                </ion-col>
-              </ion-row>
-
+        
+                <h3> <ion-icon ios="ios-filing" md="md-filing"></ion-icon> Items </h3>
+            </ion-card-content>
                                                                                   
     	</ion-list>
     </div>
 
     	<button style="float:right;" ion-button color="dark" (click) ="goEvedJobOrder()">Proceed to Job Order -></button>
-        <button style="float:right;" ion-button >Save</button>
+        <button style="float:right;" ion-button (click) ="submit()">Save</button>
 </ion-content>
