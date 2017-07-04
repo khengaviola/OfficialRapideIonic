@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="top">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -7,7 +7,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="cont">
 <br> 
 
 <ion-row>
@@ -15,30 +15,32 @@
  </ion-row>
  <br><br>
 
- <ion-row>
-  <ion-col width-20>
-
-      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
- 
-   </ion-col>
- </ion-row>
-
- <ion-row>
-                <ion-col width-100>                                   
-
-                </ion-col>
-
-                    <ion-grid text-center>
-                <ion-row wrap responsive>
-                   <ion-col style = "border: 1px solid;" width-25>Vehicle</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Customer</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Problem</ion-col>
-                     <ion-col style = "border: 1px solid;" width-25>Request</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Remarks</ion-col>
-                   <ion-col style = "border: 1px solid;" width-25>Action</ion-col>
-                            
-                </ion-row>
-             </ion-grid>
-  </ion-row>
+ <table datatable class="row-border hover">
+  <thead>
+    <tr>
+      <th>Vehicle</th>
+      <th>Customer</th>
+      <th>Remarks</th>
+    </tr>
+   </thead>
+   <tbody>
+    <tr *ngFor="let ins of data">
+       <td> 
+               <li> Plate: {{ins.plate}} </li>
+               <li> Model: {{ins.model}} </li>
+               <li> Mileage: {{ins.mileage}} </li>
+       </td>
+       <td>
+               <li> Name: {{ins.name}} </li>
+               <li> Address: {{ins.address}} </li>
+               <li> Contact: {{ins.contact}} </li>
+               <li> Email: {{ins.email}} </li>
+       </td>
+       <td>
+                {{ins.remarks}}
+       </td>
+    </tr>
+   </tbody>
+   </table>
 
 </ion-content>

@@ -57,7 +57,7 @@ export class evTabPage {
  setCustomer(){
     this.customerProvider.getCustomer().subscribe(res=>{
       this.data = res
-      console.log(this.data);
+      console.log(this.data[0]);
 
 
 
@@ -79,7 +79,7 @@ export class evTabPage {
       this.prod = res
       console.log(this.prod);
 
-      this.prod = this.try;
+    
 
     });
 
@@ -136,9 +136,12 @@ export class evTabPage {
   }
 
   submit(){
-    console.log(this.data.username);
-    console.log(this.data.password);
-    console.log(this.data.age);
+    console.log(this.data.tech);
+    console.log(this.data.discount);
+    console.log(this.data.promo);
+    console.log(this.data.packages);
+    console.log(this.data.product);
+    console.log(this.data.services);
     let first = this.data.first;
     let middle = this.data.middle;
     let last = this.data.last;
@@ -154,7 +157,7 @@ export class evTabPage {
     let type = this.data.type;
     let engine = this.data.engine;
     let mileage = this.data.mileage;
-    let tech = this.data.tech;
+    let tech = this.data.tech; 
     let discount = this.data.discount;
     let promo = this.data.promo;
     let packages = this.data.package;

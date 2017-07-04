@@ -31,6 +31,7 @@ import { TechnicianProvider } from '../providers/technician/technician';
 import { CustomerProvider } from '../providers/customer/customer';
 import { DashboardProvider } from '../providers/dashboard/dashboard';
 import { JoborderProvider } from '../providers/joborder/joborder';
+import { InspectProvider } from '../providers/inspect/inspect';
 
 
 
@@ -84,7 +85,8 @@ import { JoborderProvider } from '../providers/joborder/joborder';
     CustomerProvider,
     CustomerProvider,
     DashboardProvider,
-    JoborderProvider
+    JoborderProvider,
+    InspectProvider
   ]
 })
 export class AppModule {}

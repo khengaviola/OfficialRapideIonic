@@ -18,7 +18,7 @@ import 'rxjs/add/operator/map';
 })
 export class joFormPage {
 data: any;
-
+lol : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private joborderProvider: JoborderProvider) {
   }
@@ -40,9 +40,10 @@ getJoborder()
   {
     this.joborderProvider.getJoborder().subscribe(res=>{
       this.data = res
+        this.lol = this.data[0].model;
 
-
-       console.log(this.data.userId);
+       console.log(this.data);
+       console.log(this.lol);
     });
 
    

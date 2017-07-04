@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="top">
     <button ion-button menuToggle (click)="Modal()">
       <ion-icon name="arrow-back"></ion-icon>
     </button>
@@ -16,7 +16,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding id="cont">
 	 <ion-segment [(ngModel)]="info">
         <ion-segment-button value="user">
             User Information

@@ -4,7 +4,7 @@
   }
 </style>
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="top">
     <ion-title style="float:left;margin-top: 10px;">Transaction - New Inspection</ion-title>
     <button style="float:right;" ion-button color="dark" clear (click)="modalClose()">
       <ion-icon name="close"></ion-icon>
@@ -13,7 +13,7 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content padding id="cont">
     <ion-segment [(ngModel)]="info">
         <ion-segment-button value="customer">
             Customer Information
