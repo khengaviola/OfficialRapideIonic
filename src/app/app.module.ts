@@ -32,6 +32,13 @@ import { CustomerProvider } from '../providers/customer/customer';
 import { DashboardProvider } from '../providers/dashboard/dashboard';
 import { JoborderProvider } from '../providers/joborder/joborder';
 import { InspectProvider } from '../providers/inspect/inspect';
+import { ExpandableComponent } from '../components/expandable/expandable';
+import { Expandable2Component } from '../components/expandable2/expandable2';
+import { Expandable3Component } from '../components/expandable3/expandable3';
+
+import { RdFormPage } from '../pages/rd-form/rd-form';
+import { PoFormPage }from '../pages/po-form/po-form';
+import { PurchaseProvider } from '../providers/purchase/purchase';
 
 
 
@@ -48,7 +55,12 @@ import { InspectProvider } from '../providers/inspect/inspect';
     joFormPage,
     joPaymentPage,
     joTabPage,
-    UpdateEstimatePage
+    RdFormPage,
+    PoFormPage,
+    UpdateEstimatePage,
+    ExpandableComponent,
+    Expandable2Component,
+    Expandable3Component
   ],
   imports: [
     BrowserModule,
@@ -68,7 +80,9 @@ import { InspectProvider } from '../providers/inspect/inspect';
     evedPaymentPage,
     joFormPage,
     joPaymentPage,
+    PoFormPage,
     joTabPage,
+    RdFormPage,
     UpdateEstimatePage
   ],
   providers: [
@@ -86,7 +100,8 @@ import { InspectProvider } from '../providers/inspect/inspect';
     CustomerProvider,
     DashboardProvider,
     JoborderProvider,
-    InspectProvider
+    InspectProvider,
+    PurchaseProvider
   ]
 })
 export class AppModule {}

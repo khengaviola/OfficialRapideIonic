@@ -7,9 +7,9 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content  id="cont">
+<ion-content style="margin-top: 20px;" id="cont">
 
-<ion-row padding>
+<ion-row >
 </ion-row>
 
 <table datatable class="row-border hover" id="#data1">
@@ -22,11 +22,11 @@
    </thead>
    <tbody>
     <tr *ngFor="let prod of data2" >
-       <td> 
-                {{prod.product}} 
+       <td>
+          {{prod.brand}} - {{prod.product}}  {{(prod.isoriginal == null? "":"- Original")}} - {{prod.variance}} 
        </td>
        <td> 
-           {{prod.stock}} 
+           {{prod.quantity}} 
        </td>
        <td> 
            {{prod.reorder}} 
@@ -41,5 +41,5 @@
     © 2017-RAPIDS
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
 </ion-content>
+

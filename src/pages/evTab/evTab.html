@@ -14,6 +14,45 @@
 
 
 <ion-content padding id="cont">
+
+    <ion-item>
+        <h2 item-center>Customer Information</h2>
+        <ion-item (click)="expands()">
+            Customer Information             
+            <ion-item *ngIf="expanded" >
+                 <ion-grid>
+                <ion-row>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>First Name<span>*</span></ion-label>
+                            <ion-input class="completeMe" id="firstName" type="text" [(ngModel)]="data.first" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>Middle Name</ion-label>
+                            <ion-input type="text" [(ngModel)]="data.middle" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                    <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>Last Name<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.last" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                      <ion-col width-33>
+                        <ion-item>
+                            <ion-label floating>No. & St./Bldg.<span>*</span></ion-label>
+                            <ion-input type="text" [(ngModel)]="data.st" value=""></ion-input>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+                </ion-grid>
+            </ion-item>  
+        </ion-item>
+      </ion-item>
+
+
     <ion-segment [(ngModel)]="info">
         <ion-segment-button value="customer">
             Customer Information
@@ -72,7 +111,7 @@
                     <ion-col width-50>
                         <ion-item>
                             <ion-label floating>Contact<span>*</span></ion-label>
-                            <ion-input type="number" [(ngModel)]="data.contact" value=""></ion-input>
+                            <ion-input type="number" id="cp" [(ngModel)]="data.contact" value=""></ion-input>
                         </ion-item>
                     </ion-col>
                     <ion-col width-50>

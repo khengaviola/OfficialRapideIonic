@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-     <ion-title style="float:left;margin-top: 10px;">Transaction - Estimate Cost</ion-title>
+     <ion-title style="float:left;margin-top: 10px;">Transaction - Receive Delivery</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
 
 <ion-row>
 <ion-item color="dirty" no-lines>
- <button ion-button item-right padding round color="green" (click) ="goEvTab()">+ Add new</button>
+ <button ion-button item-right padding round color="green" (click) ="goRdTab()">+ Add new</button>
  </ion-item>
  </ion-row>
  <br><br>
@@ -21,8 +21,8 @@
   <table datatable class="row-border hover">
   <thead>
     <tr>
-      <th>Vehicle</th>
-      <th>Customer</th>
+      <th>Delivery</th>
+      <th>Supplier</th>
       <th>Action</th>
     </tr>
    </thead>

@@ -13,8 +13,9 @@ import { evedPaymentPage } from '../pages/evedPayment/evedPayment';
 import { joFormPage } from '../pages/joForm/joForm';
 import { joPaymentPage } from '../pages/joPayment/joPayment';
 import { joTabPage } from '../pages/joTab/joTab';
-
-
+import { RdFormPage } from '../pages/rd-form/rd-form';
+import { PoFormPage }from '../pages/po-form/po-form';
+ 
 
 
 
@@ -36,7 +37,6 @@ export class MyApp {
     this.pages = [
       { title: 'Dashboard', component: DashboardPage },
       { title: 'Inspect Vehicle ', component: ivFormPage },
-      { title: 'Estimate Cost', component: evFormPage },
       { title: 'Job Order ', component: joFormPage }
 
     ];

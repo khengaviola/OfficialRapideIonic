@@ -40,7 +40,6 @@ getJoborder()
   {
     this.joborderProvider.getJoborder().subscribe(res=>{
       this.data = res
-        this.lol = this.data[0].model;
 
        console.log(this.data);
        console.log(this.lol);

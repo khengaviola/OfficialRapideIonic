@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { evFormPage } from '../evForm/evForm';
 import { evedJobOrderPage } from '../evedJobOrder/evedJobOrder';
@@ -18,6 +18,7 @@ import { CustomerProvider } from '../../providers/customer/customer';
   templateUrl: 'evTab.html',
 })
 export class evTabPage {
+  expanded:boolean = true;
   custName : any;
   cust : any;
   data : any;
@@ -29,6 +30,15 @@ export class evTabPage {
   disc : any;
   tech : any;
   try : any;
+
+  items: any = [];
+  item2nd: any = [];
+  item3rd: any = [];
+  // itemExpanded : boolean = false;
+  itemExpandHeight : number = 200;
+  itemExpandHeight2 : number = 200;
+  itemExpandHeight3 : number = 200;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, public toastCtrl: ToastController, private serviceProvider: ServicesProvider, private productProvider: ProductProvider, private discountProvider: DiscountProvider, private packageProvider: PackageProvider, private promoProvider: PromoProvider, private technicianProvider: TechnicianProvider, private customerProvider: CustomerProvider) {
     this.custName = {};
   	this.data = {};
@@ -40,7 +50,25 @@ export class evTabPage {
     this.tech = {};
     this.info = "customer";
     this.select = {};
+
+    // this.items3 = [
+    //   {expanded3:true}
+    // ];
   }
+
+  expands(){
+    if(this.expanded){
+      this.expanded = false;
+    }else{
+      this.expanded = true;
+    }
+  }
+
+ 
+
+  //  expandItem3(item3){
+  //   item3.expanded = !item3.expanded;
+  // }
 
    ngOnInit() {
     this.getService();
@@ -49,26 +77,26 @@ export class evTabPage {
     this.getPromo();
     this.getDiscount();
     this.getTechnician();
-    this.setCustomer();
+    // this.setCustomer();
   }
 
 
 
- setCustomer(){
-    this.customerProvider.getCustomer().subscribe(res=>{
-      this.data = res
-      console.log(this.data[0]);
+ // setCustomer(){
+ //    this.customerProvider.getCustomer().subscribe(res=>{
+ //      this.data = res
+ //      // console.log(this.data[0]);
 
 
 
-    });
- }
+ //    });
+ // }
 
 
   getService(){
     this.serviceProvider.getService().subscribe(res=>{
       this.data = res
-      console.log(this.data);
+      // console.log(this.data);
 
     });
 
@@ -77,7 +105,7 @@ export class evTabPage {
   getProduct(){
     this.productProvider.getProduct().subscribe(res=>{
       this.prod = res
-      console.log(this.prod);
+      // console.log(this.prod);
 
     
 
@@ -99,7 +127,7 @@ export class evTabPage {
    getPromo(){
     this.promoProvider.getPromo().subscribe(res=>{
       this.prom = res
-      console.log(this.prom);
+      // console.log(this.prom);
 
     });
 
@@ -108,7 +136,7 @@ export class evTabPage {
   getDiscount(){
     this.discountProvider.getDiscount().subscribe(res=>{
       this.disc = res
-      console.log(this.disc);
+      // console.log(this.disc);
 
     });
 
@@ -117,7 +145,7 @@ export class evTabPage {
    getTechnician(){
     this.technicianProvider.getTechnician().subscribe(res=>{
       this.tech = res
-      console.log(this.tech);
+      // console.log(this.tech);
 
     });
 
@@ -136,12 +164,12 @@ export class evTabPage {
   }
 
   submit(){
-    console.log(this.data.tech);
-    console.log(this.data.discount);
-    console.log(this.data.promo);
-    console.log(this.data.packages);
-    console.log(this.data.product);
-    console.log(this.data.services);
+    // console.log(this.data.tech);
+    // console.log(this.data.discount);
+    // console.log(this.data.promo);
+    // console.log(this.data.packages);
+    // console.log(this.data.product);
+    // console.log(this.data.services);
     let first = this.data.first;
     let middle = this.data.middle;
     let last = this.data.last;

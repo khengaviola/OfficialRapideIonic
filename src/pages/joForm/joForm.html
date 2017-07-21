@@ -11,15 +11,16 @@
 <br> 
 
 <ion-row>
- <button style="margin-left: 30px;" ion-button (click) ="gojoTab()">+ New Job Order</button>
+<ion-item color="dirty" no-lines>
+ <button ion-button item-right padding round color="green" (click) ="gojoTab()">+ Add New</button>
+ </ion-item>
  </ion-row>
  <br><br>
+
 
 <table datatable class="row-border hover">
   <thead>
     <tr>
-      <th>Job Id.</th>
-      <th>Start</th>
       <th>Vehicle</th>
       <th>Customer</th>
       <th>Technician/s</th>
@@ -27,29 +28,32 @@
    <tbody>
     <tr *ngFor="let job of data">
 
-       <td> 
-          {{job.id}}
-       </td>
-
-       <td>
-          {{job.start}}
+        <td>
+            <li>Plate: {{job.plate}}</li>
+            <li>Model: {{job.make}} - {{job.year}} {{job.model}} ({{job.transmission}})</li>
+            <li>Mileage: {{job.mileage}}</li>
        </td>
 
         <td>
-            <li>{{job.plate}}</li>
-            <li>{{job.model}}</li>
-            <li>{{job.mileage}}</li>
+            <li>Name: {{job.firstName}} {{job.middleName}} {{job.lastName}}</li>
+            <li>Address: {{job.street}} {{job.brgy}} {{job.city}}</li>
+            <li>Contact No.: {{job.contact}}</li>
+            <li>Email: {{job.email}}</li>
        </td>
 
-        <td>
-          {{job.customer}}
-       </td>
+        <th>
+         <button ion-button small outline color="secondary">
+        <ion-icon name="checkbox-outline"></ion-icon></button> 
 
-        <td>
-          {{job.technician}}
-       </td>
+        <button ion-button small outline>
+        <ion-icon name="create"></ion-icon></button> 
+        </th>
     </tr>
    </tbody>
    </table>
+
+
+
+
 
 </ion-content>

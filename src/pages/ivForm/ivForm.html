@@ -1,4 +1,4 @@
-<ion-header>
+ <ion-header>
   <ion-navbar color="top">
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
@@ -11,7 +11,9 @@
 <br> 
 
 <ion-row>
- <button style="margin-left: 30px;" ion-button (click) ="goIvTab()">+ New Inspection</button>
+<ion-item color="dirty" no-lines>
+ <button ion-button item-right padding round color="green" (click) ="goIvTab()">+ Add new</button>
+ </ion-item>
  </ion-row>
  <br><br>
 
@@ -21,6 +23,7 @@
       <th>Vehicle</th>
       <th>Customer</th>
       <th>Remarks</th>
+      <th>Action</th>
     </tr>
    </thead>
    <tbody>
@@ -31,14 +34,19 @@
                <li> Mileage: {{ins.mileage}} </li>
        </td>
        <td>
-               <li> Name: {{ins.name}} </li>
-               <li> Address: {{ins.address}} </li>
+               <li>Name: {{ins.firstName}} {{ins.middleName}} {{ins.lastName}}</li>
+                <li>Address: {{ins.street}} {{ins.brgy}} {{ins.city}}</li>
                <li> Contact: {{ins.contact}} </li>
                <li> Email: {{ins.email}} </li>
        </td>
        <td>
                 {{ins.remarks}}
        </td>
+
+       <th>
+        <button ion-button small outline>
+        <ion-icon name="create"></ion-icon></button> 
+        </th>
     </tr>
    </tbody>
    </table>

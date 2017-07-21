@@ -34,6 +34,12 @@ export class joTabPage {
   prom : any;
   disc : any;
   tech : any;
+  technician : string;
+  discount : string;
+  promo : string;
+  package : string;
+  product : string;
+  service : string;
   try : any;  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, public toastCtrl: ToastController, private serviceProvider: ServicesProvider, private productProvider: ProductProvider, private discountProvider: DiscountProvider, private packageProvider: PackageProvider, private promoProvider: PromoProvider, private technicianProvider: TechnicianProvider, private customerProvider: CustomerProvider) {
       this.custName = {};
     this.data = {};
@@ -57,6 +63,37 @@ export class joTabPage {
     this.getTechnician();
     this.setCustomer();
   }
+
+
+selectTech(tech){
+  this.technician = this.tech;
+  console.log(this.technician);
+}
+
+selectdiscount(discount){
+  this.discount = this.discount;
+  console.log(this.discount);
+}
+
+selectpromo(promo){
+  this.promo = this.promo;
+  console.log(this.promo);
+}
+
+selectpackages(pack){
+  this.package = this.pack;
+  console.log(this.package);
+}
+
+selectproduct(product){
+  this.product = this.product;
+  console.log(this.product);
+}
+
+selectservices(service){
+  this.service = this.service;
+  console.log(this.service);
+}
 
 
 

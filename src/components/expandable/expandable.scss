@@ -1,0 +1,14 @@
+expandable {
+
+	expand-wrapper
+	{
+		height:0;
+		transition: 1s;
+	}
+	
+
+	.expanded 
+	{
+		height:1000px;
+	}
+}

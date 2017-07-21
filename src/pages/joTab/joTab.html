@@ -156,8 +156,8 @@
                     <ion-item>
                         <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Assign Technician/s
                         </ion-label>
-                            <ion-select multiple="true" [(ngModel)]="data.tech">
-                                <ion-option *ngFor="let tech of tech" value="{{tech.id}}">{{tech.technician}}</ion-option>
+                            <ion-select multiple="true" [(ngModel)]="tech" (ionChange)="selectTech(tech)">
+                                <ion-option *ngFor="let tech of tech" value="{{tech.technician}}">{{tech.technician}}</ion-option>
                             </ion-select>
                     </ion-item>
               </ion-col>
@@ -168,8 +168,8 @@
                     <ion-item>
                         <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Discount
                         </ion-label>
-                            <ion-select multiple="true" [(ngModel)]="data.discount">
-                                <ion-option *ngFor="let disc of disc" value="{{disc.id}}">{{disc.name}}</ion-option>
+                            <ion-select multiple="true" [(ngModel)]="discount" (ionChange)="selectdiscount(discount)">
+                                <ion-option *ngFor="let disc of disc" value="{{disc.name}}">{{disc.name}}</ion-option>
                             </ion-select>
                     </ion-item>
                 </ion-col>
@@ -181,8 +181,8 @@
                     <ion-item>
                         <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Promo
                         </ion-label>
-                            <ion-select multiple="true" [(ngModel)]="data.promo">
-                                <ion-option *ngFor="let prom of prom" value="{{prom.id}}">{{prom.name}}</ion-option>
+                            <ion-select multiple="true" [(ngModel)]="promo" (ionChange)="selectpromo(promo)">
+                                <ion-option *ngFor="let prom of prom" value="{{prom.name}}">{{prom.name}}</ion-option>
                             </ion-select>
                     </ion-item>
                 </ion-col>
@@ -193,8 +193,8 @@
                     <ion-item>
                         <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Package
                         </ion-label>
-                            <ion-select multiple="true" [(ngModel)]="data.packages">
-                                <ion-option *ngFor="let pack of pack" value="{{pack.id}}">{{pack.name}}</ion-option>
+                            <ion-select multiple="true" [(ngModel)]="pack" (ionChange)="selectpackages(pack)">
+                                <ion-option *ngFor="let pack of pack" value="{{pack.name}}">{{pack.name}}</ion-option>
                             </ion-select>
                     </ion-item>
                     </ion-col>
@@ -206,8 +206,8 @@
                     <ion-item>
                         <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Product
                         </ion-label>
-                            <ion-select multiple="true"  [(ngModel)]="data.product">
-                                <ion-option *ngFor="let prod of prod" value="{{prod.id}}">{{prod.product}}</ion-option>
+                            <ion-select multiple="true"  [(ngModel)]="product" (ionChange)="selectproduct(product)">
+                                <ion-option *ngFor="let prod of prod" value="{{prod.product}}">{{prod.product}}</ion-option>
                             </ion-select>
                     </ion-item>
                     </ion-col>
@@ -218,8 +218,8 @@
             <ion-col width-33>
                 <ion-item>
                 <ion-label><ion-icon ios="ios-paper" md="md-paper"></ion-icon> Services</ion-label>
-                    <ion-select multiple="true"  [(ngModel)]="data.services">
-                          <ion-option *ngFor="let user of data" value="{{user.id}}">{{user.name}}</ion-option>
+                    <ion-select multiple="true"  [(ngModel)]="service" (ionChange)="selectservices(service)">
+                          <ion-option *ngFor="let user of data" value="{{user.name}}">{{user.name}}</ion-option>
                     </ion-select>
                 </ion-item>
                 </ion-col>
@@ -229,8 +229,12 @@
                 <ion-col width-100>
                     
                     <ion-item>
-                        <ion-label floating>Description<span>*</span></ion-label>
-                        <ion-input type="text" [(ngModel)]="data.desc" value=""></ion-input>
+                        <li>Technician: {{this.technician}}</li>
+                        <li>Discount: {{this.discount}}</li>
+                        <li>Promo: {{this.promo}}</li>
+                        <li>Pack: {{this.package}}</li>
+                        <li>Product: {{this.product}}</li>
+                        <li>Service: {{this.service}}</li>
                     </ion-item>
                 </ion-col>
             </ion-row>

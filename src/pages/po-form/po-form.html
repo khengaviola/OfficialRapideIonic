@@ -3,7 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-     <ion-title style="float:left;margin-top: 10px;">Transaction - Estimate Cost</ion-title>
+     <ion-title style="float:left;margin-top: 10px;">Transaction - Purchase Order</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
 
 <ion-row>
 <ion-item color="dirty" no-lines>
- <button ion-button item-right padding round color="green" (click) ="goEvTab()">+ Add new</button>
+ <button ion-button item-right padding round color="green" (click) ="goRdTab()">+ Add new</button>
  </ion-item>
  </ion-row>
  <br><br>
@@ -21,25 +21,20 @@
   <table datatable class="row-border hover">
   <thead>
     <tr>
-      <th>Vehicle</th>
-      <th>Customer</th>
+      <th>Purchase ID</th>
+      <th>Supplier</th>
       <th>Action</th>
     </tr>
    </thead>
    <tbody>
-    <tr *ngFor="let user of data">
+    <tr *ngFor="let lol of data">
 
        <td> 
-          <li>Plate: {{user.plate}} </li>
-          <li>Model: {{user.Model}} </li>
-          <li>Mileage: {{user.mileage}} </li>
+       		Purchase Id: {{ lol.id }}
        </td>
 
        <td>
-          <li>Name: {{user.Name}} </li>
-          <li>Address: {{user.Address}} </li>
-          <li>Contact No: {{user.contact}} </li>
-          <li>Email: {{user.email}} </li>
+          Supplier: {{ lol.name }}
        </td>
 
       <th> <button ion-button small outline (click)="update(userId)">
